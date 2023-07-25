@@ -8,11 +8,7 @@
         <a href="#" class="hover:text-white">Blog</a>
     </aside>
     <aside class="flex items-center space-x-8 font-semibold">
-        <p class="hover:text-white cursor-pointer" onclick="document.getElementById('sign_in').className ='block'">
-            Sign in
-        </p>
-        <p class="text-[#ffa4f2] cursor-pointer" onclick="document.getElementById('sign_up').className ='block'">
-            Get Started
-        </p>
+        <a href="/login" class="hover:text-white" target="_blank">Sign in</a>
+        <a href="/register" class="text-[#ffa4f2]" target="_blank">Get Started</a>
     </aside>
 </nav>

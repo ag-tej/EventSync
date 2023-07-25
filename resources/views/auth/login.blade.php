@@ -1,13 +1,20 @@
-<div id="sign_in" class="hidden">
-    <div class="backdrop" onclick="document.getElementById('sign_in').className = 'hidden'">
+@extends('layouts.layout')
+
+@section('title')
+    Sign in | EventSync
+@endsection
+
+@section('content')
+    @include('components.navbar')
+
+    {{-- login form --}}
+    <div class="backdrop">
     </div>
     <div class="popup_center">
         <div class="popup animate-open">
             <p class="mb-1 font-bold text-4xl">Sign in</p>
             <p class="mb-4 text-gray-500 font-semibold">Don't have an account?
-                <span class="text-purple hover:underline cursor-pointer"
-                    onclick="document.getElementById('sign_up').className ='block', document.getElementById('sign_in').className ='hidden'">
-                    Sign up</span>
+                <a href="/register" class="text-purple hover:underline">Sign up</a>
             </p>
             <form action="/login" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -18,7 +25,7 @@
                         <script>
                             document.getElementById('email').classList.add('border-red-500')
                         </script>
-                        <p class="text-sm text-red-500"><small>{{ $message }}</small></p>
+                        <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -28,7 +35,7 @@
                         <script>
                             document.getElementById('password').classList.add('border-red-500')
                         </script>
-                        <p class="text-sm text-red-500"><small>{{ $message }}</small></p>
+                        <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -40,4 +47,4 @@
             </form>
         </div>
     </div>
-</div>
+@endsection

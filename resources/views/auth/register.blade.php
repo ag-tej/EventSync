@@ -1,15 +1,22 @@
-<div id="sign_up" class="hidden">
-    <div class="backdrop" onclick="document.getElementById('sign_up').className ='hidden'">
+@extends('layouts.layout')
+
+@section('title')
+    Get Started | EventSync
+@endsection
+
+@section('content')
+    @include('components.navbar')
+
+    {{-- register form --}}
+    <div class="backdrop">
     </div>
     <div class="popup_center">
         <div class="popup animate-open">
             <p class="mb-1 font-bold text-4xl">Sign up</p>
             <p class="mb-4 text-gray-500 font-semibold">Already have an account?
-                <span class="text-purple hover:underline cursor-pointer"
-                    onclick="document.getElementById('sign_in').className ='block', document.getElementById('sign_up').className ='hidden'">
-                    Sign in</span>
+                <a href="/login" class="text-purple hover:underline">Sign in</a>
             </p>
-            <form action="/register" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <label for="name" class="form_label">User Name</label>
@@ -18,7 +25,7 @@
                         <script>
                             document.getElementById('name').classList.add('border-red-500')
                         </script>
-                        <p class="text-sm text-red-500"><small>{{ $message }}</small></p>
+                        <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -28,7 +35,7 @@
                         <script>
                             document.getElementById('email').classList.add('border-red-500')
                         </script>
-                        <p class="text-sm text-red-500"><small>{{ $message }}</small></p>
+                        <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -38,7 +45,7 @@
                         <script>
                             document.getElementById('password').classList.add('border-red-500')
                         </script>
-                        <p class="text-sm text-red-500"><small>{{ $message }}</small></p>
+                        <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -49,11 +56,11 @@
                         <script>
                             document.getElementById('password_confirmation').classList.add('border-red-500')
                         </script>
-                        <p class="text-sm text-red-500"><small>{{ $message }}</small></p>
+                        <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <button type="submit" class="button w-full">Sign up</button>
             </form>
         </div>
     </div>
-</div>
+@endsection

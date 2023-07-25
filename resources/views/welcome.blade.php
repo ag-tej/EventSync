@@ -6,9 +6,7 @@
 
 @section('content')
     @include('components.navbar')
-    @include('auth.sign_in')
-    @include('auth.get_started')
-    
+
     {{-- animated section --}}
     <div class="my-8 text-center text-5xl leading-snug font-bold font-mono">
         <p>The Platform to</p>
