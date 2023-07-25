@@ -591,16 +591,16 @@ export default {
             top: '-67px',
         },
         '50%': {
-            top: '-135px',
+            top: '-133px',
         },
         '70%': {
-            top: '-135px',
+            top: '-133px',
         },
         '75%': {
-            top: '-202px',
+            top: '-200px',
         },
         '95%': {
-            top: '-202px',
+            top: '-200px',
         },
       },
       open: {
