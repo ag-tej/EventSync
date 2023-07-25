@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title')
-    EventSync - Explore Events
+    Explore | EventSync
 @endsection
 
 @section('content')

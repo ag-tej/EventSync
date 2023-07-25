@@ -6,7 +6,6 @@
         </a>
         <a href="/explore" class="hover:text-white">Explore</a>
         <a href="#" class="hover:text-white">Features</a>
-        <a href="#" class="hover:text-white">FAQ's</a>
         <a href="#" class="hover:text-white">Blog</a>
     </aside>
     <aside class="flex items-center space-x-8 font-semibold">
