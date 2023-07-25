@@ -41,7 +41,7 @@
                         <p class="text-sm text-red-500"><small>{{ $message }}</small></p>
                     @enderror
                 </div>
-                <div class="mb-4">
+                <div>
                     <button type="submit" class="button w-full" id="create" onclick="loading()">
                         <img aria-hidden="true" src="{{ asset('svg/loading_icon.svg') }}"
                             class="hidden w-4 h-4 mr-2 animate-spin" id="loading_icon">
