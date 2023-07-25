@@ -16,6 +16,8 @@ export default {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      textChange: 'textChange 10s infinite ease',
+      open: 'open 0.1s ease-in'
     },
     aria: {
       busy: 'busy="true"',
@@ -161,6 +163,7 @@ export default {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
+      'purple': '#7a1ee3',
     }),
     columns: {
       auto: 'auto',
@@ -573,6 +576,40 @@ export default {
           transform: 'none',
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
         },
+      },
+      textChange: {
+        '0%, 0%, 100%, 100%': {
+            top: '0',
+        },
+        '20%': {
+            top: '0',
+        },
+        '25%': {
+            top: '-67px',
+        },
+        '45%': {
+            top: '-67px',
+        },
+        '50%': {
+            top: '-135px',
+        },
+        '70%': {
+            top: '-135px',
+        },
+        '75%': {
+            top: '-202px',
+        },
+        '95%': {
+            top: '-202px',
+        },
+      },
+      open: {
+        '0%': {
+            transform: 'scale(0.8)',
+        },
+        '100%': {
+            transform: 'scale(1)',
+        }
       },
     },
     letterSpacing: {
