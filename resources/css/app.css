@@ -34,7 +34,15 @@
     }
 
     .notification_box {
-        @apply absolute flex items-center w-full bg-white max-w-xs p-2 border border-black/10 rounded shadow z-50;
+        @apply absolute top-24 left-1/2 -ml-40 w-full bg-white max-w-xs border border-black/10 border-b-0 rounded shadow z-50 animate-toast_notification;
+    }
+
+    .notification_content {
+        @apply flex items-center p-2;
+    }
+
+    .progress_bar {
+        @apply h-1 rounded-b-sm;
     }
 
     .icon {
