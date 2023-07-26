@@ -12,11 +12,12 @@
     <title>@yield('title')</title>
     @vite('resources/css/app.css')
     <style>
-        
+
     </style>
 </head>
 
 <body class="bg-[#f8f8f8]">
+    @include('components.toast_notification')
     @yield('content')
 </body>
 
