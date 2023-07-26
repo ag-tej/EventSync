@@ -18,10 +18,11 @@
                     to the email address
                     <span class="font-medium text-purple">{{ Auth::user()->email }}</span>.
                 </p>
-                <form method="POST" action="{{ route('verification.send') }}">
+                <form method="POST" action="{{ route('verification.send') }}" id="form">
                     @csrf
-                    <button type="submit"
-                        class="inline-block w-96 rounded bg-purple px-5 py-3 font-medium text-white hover:shadow-md hover:shadow-indigo-500/20">
+                    <button type="submit" class="button w-96" id="button" onclick="loading()">
+                        <img aria-hidden="true" src="{{ asset('svg/loading_icon.svg') }}"
+                            class="hidden w-4 h-4 mr-2 animate-spin" id="loading_icon">
                         Resend Verification Link
                     </button>
                 </form>
