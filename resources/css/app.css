@@ -26,7 +26,7 @@
     }
 
     .button {
-        @apply font-semibold text-white bg-purple hover:drop-shadow rounded px-3 py-2 inline-flex items-center justify-center;
+        @apply font-semibold text-white bg-purple hover:shadow-md hover:shadow-purple/30 rounded px-3 py-2 inline-flex items-center justify-center;
     }
 
     .navbar {
