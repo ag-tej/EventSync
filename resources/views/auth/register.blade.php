@@ -8,8 +8,10 @@
     @include('components.navbar')
 
     {{-- register form --}}
-    <div class="backdrop">
-    </div>
+    <a href="/" class="cursor-default">
+        <div class="backdrop">
+        </div>
+    </a>
     <div class="popup_center">
         <div class="popup animate-open">
             <p class="mb-1 font-bold text-4xl">Sign up</p>

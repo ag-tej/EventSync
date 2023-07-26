@@ -7,8 +7,16 @@
         <a href="/" class="hover:text-white">Home</a>
         <a href="#" class="hover:text-white">Blog</a>
     </aside>
-    <aside class="flex items-center space-x-8 font-semibold">
-        <a href="/login" class="hover:text-white" target="_blank">Sign in</a>
-        <a href="/register" class="text-[#ffa4f2]" target="_blank">Get Started</a>
-    </aside>
+    @if (Auth::user())
+        <p>{{ Auth::user()->name }}</p>
+        <form action="{{ route('logout') }}" method="POST" role="button">
+            @csrf
+            <a onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+        </form>
+    @else
+        <aside class="flex items-center space-x-8 font-semibold">
+            <a href="/login" class="hover:text-white">Sign in</a>
+            <a href="/register" class="text-[#ffa4f2]">Get Started</a>
+        </aside>
+    @endif
 </nav>
