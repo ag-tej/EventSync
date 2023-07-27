@@ -1,6 +1,4 @@
 <nav class="navbar">
-    <div id="user_backdrop" class="absolute top-0 left-0 bg-transparent h-screen w-screen -mt-2 -ml-48 z-10"
-        style="visibility: hidden" onclick="userDropdown('user_backdrop', 'user_dropdown')"></div>
     <aside class="flex items-center space-x-8">
         <a href="/explore" class="flex items-center space-x-1 text-2xl font-mono">
             <img alt="logo" src="/svg/favicon.svg" width="25" decoding="async" loading="lazy">
@@ -17,13 +15,12 @@
     </aside>
     @if (Auth::user())
         <div class="flex flex-col items-center">
-            <button type="button" onclick="userDropdown('user_dropdown', 'user_backdrop')"
-                class="flex items-center space-x-2 hover:text-[#ffa4f2]">
+            <button type="button" id="dropdown_button" class="flex items-center space-x-2 hover:text-[#ffa4f2]">
                 <div class="w-8 h-8 rounded-full bg-cover"
                     style="background-image: url({{ asset('avatar/user_avatar.png') }})"></div>
                 <p>{{ Auth::user()->username }}</p>
             </button>
-            <div id="user_dropdown" class="absolute flex flex-col items-center top-14 z-50 animate-dropdown"
+            <div id="dropdown" class="absolute flex flex-col items-center top-14 z-50 animate-dropdown"
                 style="visibility: hidden">
                 <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="rotate-180 text-white">
@@ -113,4 +110,21 @@
             <a href="/register" class="text-[#ffa4f2]">Get Started</a>
         </aside>
     @endif
+    <script>
+        let dropdown_button = document.querySelector("#dropdown_button");
+        let dropdown = document.querySelector("#dropdown");
+        dropdown_button.onclick = function() {
+            if (dropdown.style.visibility == 'hidden') {
+                dropdown.style.visibility = 'visible';
+                document.body.style.setProperty('pointer-events', 'none');
+                dropdown.style.setProperty('pointer-events', 'auto');
+            }
+        }
+        document.onclick = function(e) {
+            if (!dropdown.contains(e.target) && !dropdown_button.contains(e.target)) {
+                dropdown.style.visibility = 'hidden';
+                document.body.style.setProperty('pointer-events', 'auto');
+            }
+        }
+    </script>
 </nav>
