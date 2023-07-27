@@ -21,11 +21,11 @@
             <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" id="form">
                 @csrf
                 <div class="mb-4">
-                    <label for="name" class="form_label">User Name</label>
-                    <input type="text" id="name" name="name" class="form_input">
-                    @error('name')
+                    <label for="username" class="form_label">Username</label>
+                    <input type="text" id="username" name="username" class="form_input">
+                    @error('username')
                         <script>
-                            document.getElementById('name').classList.add('border-red-500')
+                            document.getElementById('username').classList.add('border-red-500')
                         </script>
                         <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
