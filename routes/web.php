@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +21,13 @@ Route::get('/', function () {
 
 Route::get('/explore', function () {
     return view('explore');
+});
+
+Route::middleware('verified')->group(function () {
+    Route::get('/profile/{username}', function () {
+        return view('user.profile');
+    });
+    Route::get('/settings', function () {
+        return view('user.settings');
+    });
 });
