@@ -1,4 +1,6 @@
 <nav class="navbar">
+    <div id="user_backdrop" class="absolute top-0 left-0 bg-transparent h-screen w-screen -mt-2 -ml-48 z-10"
+        style="visibility: hidden" onclick="userDropdown('user_backdrop', 'user_dropdown')"></div>
     <aside class="flex items-center space-x-8">
         <a href="/explore" class="flex items-center space-x-1 text-2xl font-mono">
             <img alt="logo" src="/svg/favicon.svg" width="25" decoding="async" loading="lazy">
@@ -15,12 +17,14 @@
     </aside>
     @if (Auth::user())
         <div class="flex flex-col items-center">
-            <button type="button" onclick="userDropdown()" class="flex items-center space-x-2 hover:text-[#ffa4f2]">
+            <button type="button" onclick="userDropdown('user_dropdown', 'user_backdrop')"
+                class="flex items-center space-x-2 hover:text-[#ffa4f2]">
                 <div class="w-8 h-8 rounded-full bg-cover"
                     style="background-image: url({{ asset('avatar/user_avatar.png') }})"></div>
-                <p>{{ Auth::user()->name }}</p>
+                <p>{{ Auth::user()->username }}</p>
             </button>
-            <div id="user_dropdown" class="fixed flex flex-col items-center top-14 animate-dropdown" style="visibility: hidden">
+            <div id="user_dropdown" class="absolute flex flex-col items-center top-14 z-50 animate-dropdown"
+                style="visibility: hidden">
                 <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="rotate-180 text-white">
                     <path
@@ -30,7 +34,8 @@
                 <div
                     class="text-base w-60 p-4 text-gray-900 bg-white border border-gray-200 rounded-md shadow flex flex-col gap-2">
                     <div class="flex flex-col">
-                        <a href="#" class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
+                        <a href="/profile/{{ Auth::user()->username }}"
+                            class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -76,7 +81,7 @@
                     </div>
                     <hr class="border-gray-500">
                     <div class="flex flex-col">
-                        <a href="#" class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
+                        <a href="/settings" class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
