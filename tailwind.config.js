@@ -18,7 +18,8 @@ export default {
       bounce: 'bounce 1s infinite',
       textChange: 'textChange 10s infinite ease',
       open: 'open 0.1s ease-in',
-      toast_notification: 'toast_notification 0.5s ease forwards'
+      toast_notification: 'toast_notification 0.5s ease forwards',
+      dropdown: 'dropdown 1.5s ease-in-out',
     },
     aria: {
       busy: 'busy="true"',
@@ -618,6 +619,14 @@ export default {
         },
         '100%': {
             transform: 'scale(1)'
+        },
+    },
+    dropdown: {
+        '0%': {
+            opacity: '0',
+        },
+        '100%': {
+            opacity: '100',
         },
     },
     },
