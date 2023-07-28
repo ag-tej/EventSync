@@ -11,7 +11,7 @@
     <div class="backdrop">
     </div>
     <div class="popup_center">
-        <div class="popup animate-open">
+        <div data-aos="zoom-in" data-aos-duration="300" class="popup">
             <div class="max-w-xl text-center">
                 <h2 class="mb-4 text-[40px] font-bold text-[#303030]">Check your inbox</h2>
                 <p class="mb-4 text-lg text-gray-500">We are glad, that you're with us ? We've sent you a verification link

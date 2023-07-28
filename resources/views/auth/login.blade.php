@@ -13,7 +13,7 @@
         </div>
     </a>
     <div class="popup_center">
-        <div class="popup animate-open">
+        <div data-aos="zoom-in" data-aos-duration="300" class="popup">
             <p class="mb-1 font-bold text-4xl">Sign in</p>
             <p class="mb-4 text-gray-500 font-semibold">Don't have an account?
                 <a href="/register" class="text-purple hover:underline">Sign up</a>
