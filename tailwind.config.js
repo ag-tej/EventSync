@@ -17,9 +17,7 @@ export default {
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
       textChange: 'textChange 10s infinite ease',
-      open: 'open 0.1s ease-in',
       toast_notification: 'toast_notification 0.5s ease forwards',
-      dropdown: 'dropdown 1.5s ease-in-out',
     },
     aria: {
       busy: 'busy="true"',
@@ -605,28 +603,12 @@ export default {
             top: '-200px',
         },
       },
-      open: {
-        '0%': {
-            transform: 'scale(0.9)',
-        },
-        '100%': {
-            transform: 'scale(1)',
-        }
-      },
       toast_notification: {
         '0%': {
             transform: 'scale(0.5)'
         },
         '100%': {
             transform: 'scale(1)'
-        },
-    },
-    dropdown: {
-        '0%': {
-            opacity: '0',
-        },
-        '100%': {
-            opacity: '100',
         },
     },
     },

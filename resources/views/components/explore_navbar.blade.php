@@ -20,7 +20,7 @@
                     style="background-image: url({{ asset('avatar/user_avatar.png') }})"></div>
                 <p>{{ Auth::user()->username }}</p>
             </button>
-            <div id="dropdown" class="absolute flex flex-col items-center top-14 z-50 animate-dropdown"
+            <div id="dropdown" class="absolute flex flex-col items-center top-14 z-50"
                 style="visibility: hidden">
                 <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="rotate-180 text-white">
