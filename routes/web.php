@@ -15,19 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
-Route::get('/explore', function () {
+Route::get('explore', function () {
     return view('explore');
-});
+})->name('explore');
 
 Route::middleware('verified')->group(function () {
     Route::get('/profile/{username}', function () {
         return view('user.profile');
     });
-    Route::get('/settings', function () {
+    Route::get('settings', function () {
         return view('user.settings');
-    });
+    })->name('settings');
 });

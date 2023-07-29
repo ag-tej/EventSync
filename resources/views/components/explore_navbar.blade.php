@@ -1,16 +1,15 @@
 <nav class="navbar">
     <aside class="flex items-center space-x-8">
-        <a href="/explore" class="flex items-center space-x-1 text-2xl font-mono">
-            <img alt="logo" src="/svg/favicon.svg" width="25" decoding="async" loading="lazy">
+        <a href="{{ route('explore') }}" class="flex items-center space-x-1 text-2xl font-mono">
+            <img alt="logo" src="{{ asset('svg/favicon.svg') }}" width="25" decoding="async" loading="lazy">
             <p class="text-white">EventSync</p>
         </a>
         @if (Auth::user())
             <a href="#" class="hover:text-white">My Events</a>
-            <a href="#" class="hover:text-white">Blog</a>
         @else
             <a href="/" class="hover:text-white">Home</a>
-            <a href="#" class="hover:text-white">Blog</a>
         @endif
+        <a href="#" class="hover:text-white">Blog</a>
         <a href="#" class="hover:text-white">Organize</a>
     </aside>
     @if (Auth::user())
@@ -20,8 +19,7 @@
                     style="background-image: url({{ asset('avatar/user_avatar.png') }})"></div>
                 <p>{{ Auth::user()->username }}</p>
             </button>
-            <div id="dropdown" class="absolute flex flex-col items-center top-14 z-50"
-                style="visibility: hidden">
+            <div id="dropdown" class="absolute flex flex-col items-center top-14 z-50" style="visibility: hidden">
                 <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="rotate-180 text-white">
                     <path
@@ -78,7 +76,8 @@
                     </div>
                     <hr class="border-gray-500">
                     <div class="flex flex-col">
-                        <a href="/settings" class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
+                        <a href="{{ route('settings') }}"
+                            class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -106,8 +105,8 @@
         </div>
     @else
         <aside class="flex items-center space-x-8 font-semibold">
-            <a href="/login" class="hover:text-white">Sign in</a>
-            <a href="/register" class="text-[#ffa4f2]">Get Started</a>
+            <a href="{{ route('login') }}" class="hover:text-white">Sign in</a>
+            <a href="{{ route('register') }}" class="text-[#ffa4f2]">Get Started</a>
         </aside>
     @endif
     <script>

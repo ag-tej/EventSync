@@ -16,7 +16,7 @@
         <div data-aos="zoom-in" data-aos-duration="300" class="popup">
             <p class="mb-1 font-bold text-4xl">Sign up</p>
             <p class="mb-4 text-gray-500 font-semibold">Already have an account?
-                <a href="/login" class="text-purple hover:underline">Sign in</a>
+                <a href="{{ route('login') }}" class="text-purple hover:underline">Sign in</a>
             </p>
             <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" id="form">
                 @csrf
