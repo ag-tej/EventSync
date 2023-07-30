@@ -5,10 +5,10 @@
         <div class="popup_center">
             <div class="popup max-w-sm" data-aos="zoom-in" data-aos-duration="300">
                 <p class="text-gray-700 text-lg">Delete Account</p>
-                <p class="text-gray-500 text-sm text-justify">Delete action is permanent and irreversible. The
+                <p class="text-gray-500 text-sm text-justify">This action is permanent and can't be undone. Your
                     account will no longer be available, and all personal data will be removed.</p>
-                <div class="mt-5 flex items-center justify-end space-x-5">
-                    <button type="button" class="button w-full"
+                <div class="mt-5 flex space-x-5">
+                    <button type="button" class="button w-full bg-gray-500 hover:shadow-gray-500/30"
                         onclick="document.getElementById('confirmation_box').className = 'hidden'">
                         Cancel
                     </button>
