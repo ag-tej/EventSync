@@ -1,24 +1,19 @@
 @extends('layouts.layout')
 
 @section('title')
-    Sign in | EventSync
+    Reset Password | EventSync
 @endsection
 
 @section('content')
     @include('components.navbar')
 
-    {{-- login form --}}
-    <a href="/" class="cursor-default">
-        <div class="backdrop">
-        </div>
-    </a>
+    {{-- register form --}}
+    <div class="backdrop">
+    </div>
     <div class="popup_center">
         <div data-aos="zoom-in" data-aos-duration="300" class="popup">
-            <p class="mb-1 font-bold text-4xl">Sign in</p>
-            <p class="mb-4 text-gray-500 font-semibold">Don't have an account?
-                <a href="{{ route('register') }}" class="text-purple hover:underline">Sign up</a>
-            </p>
-            <form action="{{ route('login') }}" method="POST" enctype="multipart/form-data" id="form">
+            <p class="mb-4 font-bold text-4xl">Reset Password</p>
+            <form action="{{ route('password.update') }}" method="POST" enctype="multipart/form-data" id="form">
                 @csrf
                 <div class="mb-4">
                     <label for="email" class="form_label">Email address</label>
@@ -41,14 +36,25 @@
                     @enderror
                 </div>
                 <div class="mb-4">
-                    <p class="text-purple font-semibold hover:underline">
-                        <a href="{{ route('password.request') }}">Forgot password?</a>
-                    </p>
+                    <label for="password_confirmation" class="form_label">Confirm Password</label>
+                    <input type="password" id="password_confirmation" name="password_confirmation" class="form_input">
+                    @error('password_confirmation')
+                        <script>
+                            document.getElementById('password_confirmation').classList.add('border-red-500')
+                        </script>
+                        <p class="text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                    @if (session('status'))
+                        <div class="text-sm text-purple">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 </div>
+                <input type="hidden" name="token" value="{{ request()->route('token') }}">
                 <button type="submit" class="button w-full" id="button" onclick="loading()">
                     <img aria-hidden="true" src="{{ asset('svg/loading_icon.svg') }}"
                         class="hidden w-4 h-4 mr-2 animate-spin" id="loading_icon">
-                    Sign in
+                    Reset Password
                 </button>
             </form>
         </div>
