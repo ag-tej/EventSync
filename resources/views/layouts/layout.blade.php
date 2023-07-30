@@ -27,6 +27,7 @@
         AOS.init();
     </script>
     @include('components.toast_notification')
+    @include('components.account_delete_confirmation')
     @yield('content')
     {{-- flowbite --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
