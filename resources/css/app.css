@@ -68,4 +68,26 @@
         display: none;
         scroll-behavior: smooth;
     }
+
+    /* Custom style for the active tab */
+    [aria-selected="true"] {
+        color: #7a1ee3;
+        border-bottom-color: #7a1ee3;
+        font-weight: 600;
+    }
+    [aria-selected="true"]:hover {
+        color: #7a1ee3;
+        border-bottom-color: #7a1ee3;
+    }
+
+    /* Custom style for the inactive tab */
+    [aria-selected="false"] {
+        color: rgb(107 114 128);
+        border-bottom-color: rgb(107 114 128);
+        font-weight: 600;
+    }
+    [aria-selected="false"]:hover {
+        color: rgb(55 65 81);
+        border-bottom-color: rgb(55 65 81);
+    }
 }
