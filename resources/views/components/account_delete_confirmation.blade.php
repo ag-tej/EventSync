@@ -8,11 +8,11 @@
                 <p class="text-gray-500 text-sm text-justify">This action is permanent and can't be undone. Your
                     account will no longer be available, and all personal data will be removed.</p>
                 <div class="mt-5 flex space-x-5">
-                    <button type="button" class="button w-full bg-gray-500 hover:shadow-gray-500/30"
+                    <button type="button" class="cancel_button w-full"
                         onclick="document.getElementById('confirmation_box').className = 'hidden'">
                         Cancel
                     </button>
-                    <button type="button" class="button w-full bg-red-500 hover:shadow-red-500/30"
+                    <button type="button" class="danger_button w-full"
                         onclick="document.getElementById('delete_account').submit()">
                         Delete
                     </button>

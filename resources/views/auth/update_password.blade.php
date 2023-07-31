@@ -49,8 +49,8 @@
                     @enderror
                 </div>
                 <div class="flex space-x-5">
-                    <a href="{{ route('settings') }}" class="button w-full bg-gray-500 hover:shadow-gray-500/30">
-                        Cancel
+                    <a href="{{ route('settings') }}" class="cancel_button w-full">
+                        Back
                     </a>
                     <button type="submit" class="button w-full" id="button" onclick="loading()">
                         <img aria-hidden="true" src="{{ asset('svg/loading_icon.svg') }}"
