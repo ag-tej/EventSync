@@ -98,4 +98,9 @@
         color: rgb(55 65 81);
         border-bottom-color: rgb(55 65 81);
     }
+
+    input[type='file'] {
+        padding: 0;
+        border: none;
+    }
 }
