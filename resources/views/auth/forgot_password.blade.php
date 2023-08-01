@@ -22,17 +22,13 @@
                 @csrf
                 <div class="mb-4">
                     <label for="email" class="form_label">Email address</label>
-                    <input type="email" id="email" name="email" class="form_input">
+                    <input type="email" id="email" name="email"
+                        class="form_input @error('email') border-red-500 @enderror">
                     @error('email')
-                        <script>
-                            document.getElementById('email').classList.add('border-red-500')
-                        </script>
-                        <p class="text-sm text-red-500">{{ $message }}</p>
+                        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                     @enderror
                     @if (session('status'))
-                        <div class="text-sm text-purple">
-                            {{ session('status') }}
-                        </div>
+                        <div class="mt-1 text-sm text-purple">{{ session('status') }}</div>
                     @endif
                 </div>
                 <button type="submit" class="button w-full" id="button" onclick="loading()">

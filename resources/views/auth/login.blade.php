@@ -18,27 +18,20 @@
             <p class="mb-4 text-gray-500 font-semibold">Don't have an account?
                 <a href="{{ route('register') }}" class="text-purple hover:underline">Sign up</a>
             </p>
+            @error('email')
+                <p class="mb-1 text-sm text-red-500">The provided credentials do not match our records.</p>
+            @enderror
             <form action="{{ route('login') }}" method="POST" enctype="multipart/form-data" id="form">
                 @csrf
                 <div class="mb-4">
                     <label for="email" class="form_label">Email address</label>
-                    <input type="email" id="email" name="email" class="form_input">
-                    @error('email')
-                        <script>
-                            document.getElementById('email').classList.add('border-red-500')
-                        </script>
-                        <p class="text-sm text-red-500">{{ $message }}</p>
-                    @enderror
+                    <input type="email" id="email" name="email"
+                        class="form_input @error('email') border-red-500 @enderror">
                 </div>
                 <div class="mb-4">
                     <label for="password" class="form_label">Password</label>
-                    <input type="password" id="password" name="password" class="form_input">
-                    @error('password')
-                        <script>
-                            document.getElementById('password').classList.add('border-red-500')
-                        </script>
-                        <p class="text-sm text-red-500">{{ $message }}</p>
-                    @enderror
+                    <input type="password" id="password" name="password"
+                        class="form_input @error('password') border-red-500 @enderror">
                 </div>
                 <div class="mb-4">
                     <p class="text-purple font-semibold hover:underline">
