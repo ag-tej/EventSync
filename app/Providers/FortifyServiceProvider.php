@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Actions\Fortify\CreateNewUser;
+use App\Actions\Fortify\ExtendedCreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
@@ -29,7 +30,7 @@ class FortifyServiceProvider extends ServiceProvider
         {
             public function toResponse($request)
             {
-                return redirect('explore')->with('success', 'Your email has been verified.');
+                return redirect()->route('explore')->with('success', 'Your email has been verified.');
             }
         });
 
@@ -45,7 +46,7 @@ class FortifyServiceProvider extends ServiceProvider
         {
             public function toResponse($request)
             {
-                return redirect('explore');
+                return redirect()->route('explore');
             }
         });
 
@@ -78,7 +79,7 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetPasswordView(function (Request $request) {
             return view('auth.reset_password', ['request' => $request]);
         });
-        Fortify::createUsersUsing(CreateNewUser::class);
+        Fortify::createUsersUsing(ExtendedCreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
