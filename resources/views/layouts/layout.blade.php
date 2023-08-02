@@ -12,8 +12,7 @@
     {{-- aos animation --}}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    {{-- flowbite --}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+    {{-- methods script --}}
     <script src="{{ asset('js/methods.js') }}" defer></script>
     <title>@yield('title')</title>
     @vite('resources/css/app.css')
