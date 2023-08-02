@@ -15,8 +15,11 @@
     @if (Auth::user())
         <div class="flex flex-col items-center">
             <button type="button" id="dropdown_button" class="flex items-center space-x-2 hover:text-[#ffa4f2]">
-                <div class="w-8 h-8 rounded-full bg-cover"
-                    style="background-image: url({{ asset('avatar/user_avatar.png') }})"></div>
+                <div class="w-8 aspect-square rounded-full bg-cover"
+                    @if (Auth::user()->profile->image) style="background-image: url({{ asset('storage/' . Auth::user()->profile->image) }})"
+                    @else
+                    style="background-image: url({{ asset('avatar/user_avatar.png') }})" @endif>
+                </div>
                 <p>{{ Auth::user()->username }}</p>
             </button>
             <div id="dropdown" class="absolute flex flex-col items-center top-14 z-50" style="visibility: hidden">
@@ -29,7 +32,7 @@
                 <div
                     class="text-base w-60 p-4 text-gray-900 bg-white border border-gray-200 rounded-md shadow flex flex-col gap-2">
                     <div class="flex flex-col">
-                        <a href="/profile/{{ Auth::user()->username }}"
+                        <a href="{{ route('profile', Auth::user()->username) }}"
                             class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
