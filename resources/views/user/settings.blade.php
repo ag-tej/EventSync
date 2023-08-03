@@ -201,23 +201,28 @@
                 {{-- left section --}}
                 <div class="w-1/2 pr-8 flex flex-col gap-8">
                     <div class="px-12 py-8 rounded border shadow-md">
-                        <p class="text-gray-700 text-justify mb-4">
+                        <p class="text-gray-700 text-justify mb-8">
                             At EventSync, we want to ensure that you receive relevant and valuable information about the
                             events and initiatives that matter most to you.
                         </p>
-                        <div class="mb-4">
-                            <p class="text-gray-700 mb-2">We will send you emails regarding the following:</p>
-                            <div class="flex items-center gap-2 mb-2">
+                        <div class="mb-8">
+                            <p class="text-gray-700 mb-4">We will send you emails regarding the following:</p>
+                            <div class="flex items-center gap-3 mb-4">
+                                <input type="checkbox" id="eventsync_updates" name="eventsync_updates" value="1"
+                                    class="w-4 h-4 text-purple bg-white rounded">
+                                <label for="eventsync_updates" class="form_label mb-0">EventSync Updates</label>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
                                 <input type="checkbox" id="upcoming_events" name="upcoming_events" value="1"
                                     class="w-4 h-4 text-purple bg-white rounded">
                                 <label for="upcoming_events" class="form_label mb-0">Upcoming Events</label>
                             </div>
-                            <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center gap-3 mb-4">
                                 <input type="checkbox" id="community_newsletter" name="community_newsletter"
                                     value="1" class="w-4 h-4 text-purple bg-white rounded">
                                 <label for="community_newsletter" class="form_label mb-0">Community Newsletter</label>
                             </div>
-                            <div class="flex items-center gap-2">
+                            <div class="flex items-center gap-3">
                                 <input type="checkbox" id="partner_initiatives" name="partner_initiatives"
                                     value="1" class="w-4 h-4 text-purple bg-white rounded">
                                 <label for="partner_initiatives" class="form_label mb-0">Partner Initiatives</label>
