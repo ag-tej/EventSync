@@ -37,20 +37,32 @@
                             style="background-image: url({{ asset('avatar/user_avatar.png') }})" @endif>
                             </div>
                             <div class="flex flex-col gap-3 w-full">
-                                <a href="{{ route('update.avatar') }}" class="button w-full text-lg">
-                                    Upload New Avatar
-                                </a>
-                                @if (Auth::user()->profile->image)
-                                    <a href="{{ route('delete.avatar') }}"
-                                        class="button w-full text-lg bg-red-500 hover:shadow-red-500/30">
-                                        Delete Avatar
-                                    </a>
-                                @else
-                                    <button disabled
-                                        class="button w-full text-lg bg-red-500 opacity-50 hover:shadow-none cursor-not-allowed">
-                                        Delete Avatar
+                                <div>
+                                    <button id="selectFileButton" class="button w-full text-lg">
+                                        Upload New Avatar
                                     </button>
-                                @endif
+                                    <form id="uploadForm" action="{{ route('update.avatar') }}" method="POST"
+                                        enctype="multipart/form-data" style="display: none">
+                                        @csrf
+                                        <input type="file" name="image" id="fileInput" />
+                                    </form>
+                                    @error('image')
+                                        <p class="text-sm text-red-500">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div>
+                                    @if (Auth::user()->profile->image)
+                                        <a href="{{ route('delete.avatar') }}"
+                                            class="button w-full text-lg bg-red-500 hover:shadow-red-500/30">
+                                            Delete Avatar
+                                        </a>
+                                    @else
+                                        <button disabled
+                                            class="button w-full text-lg bg-red-500 opacity-50 hover:shadow-none cursor-not-allowed">
+                                            Delete Avatar
+                                        </button>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                         <hr class="border-gray-500">
@@ -271,4 +283,15 @@
             </div>
         </div>
     </div>
+    <script>
+        const selectFileButton = document.getElementById("selectFileButton");
+        const uploadForm = document.getElementById("uploadForm");
+        const fileInput = document.getElementById("fileInput");
+        selectFileButton.addEventListener("click", () => {
+            fileInput.click();
+        });
+        fileInput.addEventListener("change", () => {
+            uploadForm.submit();
+        });
+    </script>
 @endsection
