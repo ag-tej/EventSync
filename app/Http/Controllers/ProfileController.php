@@ -25,7 +25,7 @@ class ProfileController extends Controller
             'occupation' => 'required|in:Student,Professional,Other',
             'dietary_preference' => 'required|in:Vegetarian,Non-Vegetarian,Vegan',
             'allergies' => 'nullable',
-            'contact_number' => 'required',
+            'contact_number' => 'required|digits:10',
             'city' => 'required',
             'province' => 'required',
             'country' => 'required',
