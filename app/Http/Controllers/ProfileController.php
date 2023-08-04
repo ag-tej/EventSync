@@ -33,7 +33,7 @@ class ProfileController extends Controller
         ]);
         $user = Profile::find(Auth::user()->profile->id);
         $user->update($validated);
-        return redirect()->back()->with('success', 'Your profile has been updated.');
+        return redirect()->route('explore')->with('success', 'Your profile has been updated.');
     }
 
     public function updateLinksProfile(Request $request)
@@ -45,7 +45,7 @@ class ProfileController extends Controller
         ]);
         $user = Profile::find(Auth::user()->profile->id);
         $user->update($validated);
-        return redirect()->back()->with('success', 'Your profile links have been updated.');
+        return redirect()->back()->with('success', 'Your links have been updated.');
     }
 
     public function updateAvatar(Request $request)
@@ -60,7 +60,7 @@ class ProfileController extends Controller
         $avatar = $request->file('image')->store('userAvatar');
         $user->image = $avatar;
         $user->update();
-        return redirect()->route('settings')->with('success', 'Your avatar has been uploaded.');
+        return redirect()->back()->with('success', 'Your avatar has been uploaded.');
     }
 
     public function deleteAvatar()
@@ -71,6 +71,6 @@ class ProfileController extends Controller
             $user->image = null;
             $user->update();
         }
-        return redirect()->route('settings')->with('danger', 'Your avatar has been deleted.');
+        return redirect()->back()->with('danger', 'Your avatar has been deleted.');
     }
 }
