@@ -42,7 +42,7 @@
     }
 
     .notification_box {
-        @apply absolute top-24 left-1/2 -ml-40 w-full bg-white max-w-xs border border-black/10 border-b-0 rounded shadow z-50 animate-toast_notification;
+        @apply absolute top-3.5 left-1/2 -ml-40 w-full bg-white max-w-xs border border-black/10 border-b-0 rounded shadow z-50 animate-toast_notification;
     }
 
     .notification_content {

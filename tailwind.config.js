@@ -17,7 +17,7 @@ export default {
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
       textChange: 'textChange 10s infinite ease',
-      toast_notification: 'toast_notification 0.5s ease forwards',
+      toast_notification: 'toast_notification 0.6s ease forwards',
     },
     aria: {
       busy: 'busy="true"',
@@ -606,10 +606,10 @@ export default {
       },
       toast_notification: {
         '0%': {
-            transform: 'scale(0.5)'
+            transform: 'translateY(-100%)'
         },
         '100%': {
-            transform: 'scale(1)'
+            transform: 'translateY(0%)'
         },
     },
     },
