@@ -25,7 +25,7 @@ Route::get('explore', function () {
 
 Route::middleware('verified', 'auth')->group(function () {
     // profile
-    Route::get('/profile/{username}', [ProfileController::class, 'profile'])->name('profile');
+    Route::get('profile/{username}', [ProfileController::class, 'profile'])->name('profile');
     Route::put('update/profile', [ProfileController::class, 'updateProfile'])->name('update.profile');
     // account settings
     Route::get('settings', function () {
@@ -38,7 +38,7 @@ Route::middleware('verified', 'auth')->group(function () {
         return view('auth.update_password');
     })->name('update.password');
     Route::post('update/avatar', [ProfileController::class, 'updateAvatar'])->name('update.avatar');
-    Route::get('delete/avatar', [ProfileController::class, 'deleteAvatar'])->name('delete.avatar');
+    Route::delete('delete/avatar', [ProfileController::class, 'deleteAvatar'])->name('delete.avatar');
     Route::delete('delete/account/{user}', [UserController::class, 'deleteAccount'])->name('delete.account');
     Route::put('update/links/profile', [ProfileController::class, 'updateLinksProfile'])->name('update.links.profile');
 });

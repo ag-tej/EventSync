@@ -52,10 +52,13 @@
                                 </div>
                                 <div>
                                     @if (Auth::user()->profile->image)
-                                        <a href="{{ route('delete.avatar') }}"
-                                            class="button w-full text-lg bg-red-500 hover:shadow-red-500/30">
-                                            Delete Avatar
-                                        </a>
+                                        <form action="{{ route('delete.avatar') }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="danger_button text-lg w-full">
+                                                Delete Avatar
+                                            </button>
+                                        </form>
                                     @else
                                         <button disabled
                                             class="button w-full text-lg bg-red-500 opacity-50 hover:shadow-none cursor-not-allowed">
