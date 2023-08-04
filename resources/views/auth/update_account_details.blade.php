@@ -42,7 +42,7 @@
                     @enderror
                 </div>
                 <div class="flex space-x-5">
-                    <a href="{{ route('settings') }}" class="cancel_button w-full">
+                    <a href="{{ route('settings') }}" class="secondary_button w-full">
                         Back
                     </a>
                     <button type="submit" class="button w-full" id="button" onclick="loading()">

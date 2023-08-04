@@ -8,7 +8,7 @@
                 <p class="text-gray-500 text-sm text-justify">This action is permanent and can't be undone. Your
                     account will no longer be available, and all personal data will be removed.</p>
                 <div class="mt-5 flex space-x-5">
-                    <button type="button" class="cancel_button w-full"
+                    <button type="button" class="secondary_button w-full"
                         onclick="document.getElementById('confirmation_box').className = 'hidden'">
                         Cancel
                     </button>
