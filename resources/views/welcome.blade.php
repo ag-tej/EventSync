@@ -45,8 +45,9 @@
             </div>
         </div>
         {{-- feature section --}}
+        <div id="features" class="pt-8"></div>
         <div>
-            <div class="my-16 w-2/3 mx-auto aspect-3/2 bg-cover"
+            <div class="mb-16 w-2/3 mx-auto aspect-3/2 bg-cover"
                 style="background-image: url('{{ asset('svg/abstract1.svg') }}')"></div>
             <img src="{{ asset('svg/icon1.svg') }}" class="absolute right-[25rem] -mt-32 w-44">
             <div class="flex gap-4 justify-center items-baseline text-8xl font-extrabold">
