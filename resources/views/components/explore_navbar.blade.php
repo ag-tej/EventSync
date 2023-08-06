@@ -10,7 +10,6 @@
             <a href="/" class="hover:text-white">Home</a>
         @endif
         <a href="#" class="hover:text-white">Blog</a>
-        <a href="#" class="hover:text-white">Organize</a>
     </aside>
     @if (Auth::user())
         <div class="flex flex-col items-center">
@@ -68,7 +67,8 @@
                     </div>
                     <hr class="border-gray-500">
                     <div class="flex flex-col">
-                        <a href="#" class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
+                        <a href="{{ route('organizer.dashboard') }}" target="_blank"
+                            class="p-2 rounded hover:bg-purple/10 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 18"
                                 stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round"
