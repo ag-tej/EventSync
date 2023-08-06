@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('svg/favicon.svg') }}" type="image/x-icon">
+    {{-- jquery --}}
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     {{-- figtree font --}}
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
