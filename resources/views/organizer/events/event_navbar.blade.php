@@ -21,8 +21,11 @@
         </div>
         <hr class="rotate-90 border-gray-300 w-20">
         <div>
-            @if ($navbar->percent_complete == 80)
-                <button class="button w-full mb-2">Finish Setup</button>
+            @if ($navbar->percent_complete >= 80)
+                <form action="{{ route('drafts.publish', $navbar->id) }}" enctype="multipart/form-data">
+                    @csrf
+                    <button type="submit" class="button w-full mb-2">Finish Setup</button>
+                </form>
             @else
                 <button disabled class="button bg-purple/50 cursor-not-allowed hover:shadow-none w-full mb-2">Finish
                     Setup</button>

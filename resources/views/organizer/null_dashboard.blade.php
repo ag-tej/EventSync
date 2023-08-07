@@ -19,5 +19,5 @@
         </button>
     </div>
     {{-- create event popup --}}
-    @include('organizer.components.create_event')
+    @include('organizer.popup.create_event')
 @endsection
