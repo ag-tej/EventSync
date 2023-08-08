@@ -13,15 +13,36 @@
             <div class="text-lg flex space-x-2">
                 <li role="presentation">
                     <button class="inline-block p-2 border-b-2" id="in-progress-tab" data-tabs-target="#in-progress"
-                        type="button" role="tab" aria-controls="in-progress" aria-selected="false">In progress</button>
+                        type="button" role="tab" aria-controls="in-progress" aria-selected="false">In progress
+                        @if ($inProgress_count > 0)
+                            <sup
+                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5 animate-pulse delay-[9000] duration-[9000]">
+                                {{ $inProgress_count }}
+                            </sup>
+                        @endif
+                    </button>
                 </li>
                 <li role="presentation">
                     <button class="inline-block p-2 border-b-2" id="drafts-tab" data-tabs-target="#drafts" type="button"
-                        role="tab" aria-controls="drafts" aria-selected="false">Drafts</button>
+                        role="tab" aria-controls="drafts" aria-selected="false">Drafts
+                        @if ($draft_count > 0)
+                            <sup
+                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5 animate-pulse delay-[9000] duration-[9000]">
+                                {{ $draft_count }}
+                            </sup>
+                        @endif
+                    </button>
                 </li>
                 <li role="presentation">
                     <button class="inline-block p-2 border-b-2" id="previous-tab" data-tabs-target="#previous"
-                        type="button" role="tab" aria-controls="previous" aria-selected="false">Previous</button>
+                        type="button" role="tab" aria-controls="previous" aria-selected="false">Previous
+                        @if ($previous_count > 0)
+                            <sup
+                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5 animate-pulse delay-[9000] duration-[9000]">
+                                {{ $previous_count }}
+                            </sup>
+                        @endif
+                    </button>
                 </li>
             </div>
             <div class="mb-2 flex items-center gap-8">

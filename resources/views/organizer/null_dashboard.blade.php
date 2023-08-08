@@ -15,7 +15,7 @@
             it a seamless success. Start creating your event today and let your vision come to life!
         </p>
         <button class="button w-1/2 h-12" onclick="document.getElementById('create_events').style.visibility = 'visible'">
-            Organize your event on EventSync
+            Organize your first event on EventSync
         </button>
     </div>
     {{-- create event popup --}}

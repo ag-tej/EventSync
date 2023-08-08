@@ -24,7 +24,13 @@ class EventController extends Controller
             ->whereHas('date', function ($query) {
                 $query->whereDate('event_ends', '<', Carbon::now());
             })->orderBy('updated_at', 'desc')->get();
-        return view('organizer.dashboard', compact('drafts', 'inProgress', 'previous'));
+        $draft_count = count($drafts);
+        $inProgress_count = count($inProgress);
+        $previous_count = count($previous);
+        if ($draft_count == 0 && $inProgress_count == 0 && $previous_count == 0)
+            return view('organizer.null_dashboard');
+        else
+            return view('organizer.dashboard', compact('drafts', 'inProgress', 'previous', 'draft_count', 'inProgress_count', 'previous_count'));
     }
 
     public function createEvent(Request $request)
