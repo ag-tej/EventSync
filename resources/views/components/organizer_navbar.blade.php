@@ -8,6 +8,7 @@
                     <p class="text-white text-[12px] text-center leading-3">Organizer Dashboard</p>
                 </div>
             </a>
+            <a href="{{ route('explore') }}" class="hover:text-white">Explore</a>
         </aside>
         <div class="flex flex-col items-center">
             <button type="button" id="dropdown_button" class="flex items-center space-x-2 hover:text-[#ffa4f2]">
