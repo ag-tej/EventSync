@@ -16,7 +16,7 @@
                         type="button" role="tab" aria-controls="in-progress" aria-selected="false">In progress
                         @if ($inProgress_count > 0)
                             <sup
-                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5 animate-pulse delay-[9000] duration-[9000]">
+                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5">
                                 {{ $inProgress_count }}
                             </sup>
                         @endif
@@ -27,7 +27,7 @@
                         role="tab" aria-controls="drafts" aria-selected="false">Drafts
                         @if ($draft_count > 0)
                             <sup
-                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5 animate-pulse delay-[9000] duration-[9000]">
+                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5">
                                 {{ $draft_count }}
                             </sup>
                         @endif
@@ -38,7 +38,7 @@
                         type="button" role="tab" aria-controls="previous" aria-selected="false">Previous
                         @if ($previous_count > 0)
                             <sup
-                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5 animate-pulse delay-[9000] duration-[9000]">
+                                class="text-sm ml-2 bg-gray-500 text-white rounded-full px-1.5">
                                 {{ $previous_count }}
                             </sup>
                         @endif
