@@ -20,18 +20,28 @@
             <p class="text-gray-700">set up complete</p>
         </div>
         <hr class="rotate-90 border-gray-300 w-20">
-        <div>
-            @if ($navbar->percent_complete >= 80)
-                <form action="{{ route('drafts.publish', $navbar->id) }}" enctype="multipart/form-data">
+        @if ($navbar->isPublished != 1)
+            <div>
+                @if ($navbar->percent_complete >= 80)
+                    <form action="{{ route('drafts.publish', $navbar->id) }}" enctype="multipart/form-data">
+                        @csrf
+                        <button type="submit" class="button w-full mb-2">Finish Setup</button>
+                    </form>
+                @else
+                    <button disabled class="button bg-purple/50 cursor-not-allowed hover:shadow-none w-full mb-2">Finish
+                        Setup</button>
+                @endif
+                <p class="text-gray-700">Complete set up 80% to proceed</p>
+            </div>
+        @else
+            <div>
+                <form action="{{ route('drafts.unpublish', $navbar->id) }}" enctype="multipart/form-data">
                     @csrf
-                    <button type="submit" class="button w-full mb-2">Finish Setup</button>
+                    <button type="submit" class="button w-full mb-2">Unpublish Event</button>
                 </form>
-            @else
-                <button disabled class="button bg-purple/50 cursor-not-allowed hover:shadow-none w-full mb-2">Finish
-                    Setup</button>
-            @endif
-            <p class="text-gray-700">Complete set up 100% to proceed</p>
-        </div>
+                <p class="text-gray-700">Unpublish your Event</p>
+            </div>
+        @endif
     </div>
     <div class="text-gray-500 font-semibold flex justify-between items-center py-4 px-8 rounded border shadow-md">
         <a href="{{ route('drafts.basics', $navbar->slug) }}" class="uppercase hover:text-purple">Basics</a>

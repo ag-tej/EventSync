@@ -69,4 +69,5 @@ Route::middleware('verified', 'auth')->group(function () {
     Route::post('date/store', [DateController::class, 'store'])->name('date.store');
     Route::put('date/update/{id}', [DateController::class, 'update'])->name('date.update');
     Route::get('drafts/publish/{id}', [EventController::class, 'publish'])->name('drafts.publish');
+    Route::get('drafts/unpublish/{id}', [EventController::class, 'unpublish'])->name('drafts.unpublish');
 });

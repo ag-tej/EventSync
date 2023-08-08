@@ -137,4 +137,13 @@ class EventController extends Controller
         $event->update();
         return redirect()->route('organizer.dashboard')->with('success', 'Your event has been published.');
     }
+
+    public function unpublish($id)
+    {
+        $event = Event::find($id);
+        $event->isPublished = 0;
+        $event->updated_at = Carbon::now();
+        $event->update();
+        return redirect()->route('organizer.dashboard')->with('success', 'Your event has been unpublished.');
+    }
 }
