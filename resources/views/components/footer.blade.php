@@ -1,4 +1,4 @@
-<footer class="w-full bg-[#303030] rounded-t-[400px]">
+<footer class="w-full bg-[#303030]">
     <section class="w-9/12 mx-auto p-16">
         <div class="flex justify-between items-start list-none">
             <div>
