@@ -18,12 +18,9 @@ class ApplicationController extends Controller
         ]);
         Application::create($validated);
         $event = Event::find($request->event_id);
-        if ($event->percent_complete < 40) {
-            $event->percent_complete = 40;
-        }
         $event->updated_at = Carbon::now();
         $event->update();
-        return redirect()->back()->with('info', 'Custom question has been added.');
+        return redirect()->back()->with('success', 'Question has been added.');
     }
 
     public function destroy($id)

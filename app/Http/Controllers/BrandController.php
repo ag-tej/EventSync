@@ -12,6 +12,7 @@ class BrandController extends Controller
 {
     public function logo(Request $request)
     {
+        $isNewLogo = true;
         $validated = $request->validate([
             'logo' => 'required|image|max:5000',
         ]);
@@ -25,20 +26,22 @@ class BrandController extends Controller
         } else {
             if ($brand->logo) {
                 Storage::delete($brand->logo);
+                $isNewLogo = false;
             }
             $brand->logo = $request->file('logo')->store('eventLogo');
             $brand->update();
         }
-        $event->updated_at = Carbon::now();
-        if ($event->percent_complete < 60) {
-            $event->percent_complete = 60;
+        if ($isNewLogo == true) {
+            $event->percent_complete = $event->percent_complete + 10;
         }
+        $event->updated_at = Carbon::now();
         $event->update();
-        return redirect()->back()->with('info', 'Logo has been added.');
+        return redirect()->back()->with('success', 'Logo has been uploaded.');
     }
 
     public function banner(Request $request)
     {
+        $isNewBanner = true;
         $validated = $request->validate([
             'banner' => 'required|image|max:5000',
         ]);
@@ -52,15 +55,16 @@ class BrandController extends Controller
         } else {
             if ($brand->banner) {
                 Storage::delete($brand->banner);
+                $isNewBanner = false;
             }
             $brand->banner = $request->file('banner')->store('eventBanner');
             $brand->update();
         }
-        $event->updated_at = Carbon::now();
-        if ($event->percent_complete < 70) {
-            $event->percent_complete = 70;
+        if ($isNewBanner == true) {
+            $event->percent_complete = $event->percent_complete + 10;
         }
+        $event->updated_at = Carbon::now();
         $event->update();
-        return redirect()->back()->with('info', 'Banner has been added.');
+        return redirect()->back()->with('success', 'Banner has been uploaded.');
     }
 }

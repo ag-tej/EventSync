@@ -24,12 +24,10 @@ class LinkController extends Controller
         ]);
         Link::create($validated);
         $event = Event::find($request->event_id);
-        if ($event->percent_complete < 50) {
-            $event->percent_complete = 50;
-        }
+        $event->percent_complete = $event->percent_complete + 20;
         $event->updated_at = Carbon::now();
         $event->update();
-        return redirect()->back()->with('info', 'Links have been added.');
+        return redirect()->back()->with('success', 'Links have been added.');
     }
 
     public function update(Request $request, $id)
@@ -50,6 +48,6 @@ class LinkController extends Controller
         $event = Event::find($request->event_id);
         $event->updated_at = Carbon::now();
         $event->update();
-        return redirect()->back()->with('info', 'Links have been updated.');
+        return redirect()->back()->with('success', 'Links have been updated.');
     }
 }

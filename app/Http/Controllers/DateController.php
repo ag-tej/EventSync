@@ -21,12 +21,10 @@ class DateController extends Controller
         ]);
         Date::create($validated);
         $event = Event::find($request->event_id);
-        if ($event->percent_complete < 80) {
-            $event->percent_complete = 80;
-        }
+        $event->percent_complete = $event->percent_complete + 20;
         $event->updated_at = Carbon::now();
         $event->update();
-        return redirect()->back()->with('info', 'Dates have been added.');
+        return redirect()->back()->with('success', 'Dates have been added.');
     }
 
     public function update(Request $request, $id)
@@ -44,6 +42,6 @@ class DateController extends Controller
         $event = Event::find($request->event_id);
         $event->updated_at = Carbon::now();
         $event->update();
-        return redirect()->back()->with('info', 'Dates have been updated.');
+        return redirect()->back()->with('success', 'Dates have been updated.');
     }
 }

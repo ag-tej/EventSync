@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('approx_participants')->nullable();
             $table->integer('team_size')->nullable();
             $table->string('venue')->nullable();
-            $table->integer('percent_complete')->default(10);
+            $table->integer('percent_complete')->default(20);
             $table->timestamps();
         });
     }

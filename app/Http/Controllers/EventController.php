@@ -64,11 +64,8 @@ class EventController extends Controller
             'team_size' => 'nullable',
             'venue' => $event->mode != 'Online' ? 'required' : 'nullable',
         ]);
-        if ($event->percent_complete < 25) {
-            $event->percent_complete = 25;
-        }
         $event->update($validated);
-        return redirect()->back()->with('info', 'Your changes have been saved.');
+        return redirect()->back()->with('success', 'Your changes have been saved.');
     }
 
     public function application($slug)
