@@ -9,7 +9,7 @@
 
     <div class="w-9/12 mx-auto my-16 flex gap-16">
         <div class="w-1/2 p-8 bg-white rounded border shadow-md">
-            <p class="form_label text-xl mb-4">Event Logo</p>
+            <p class="form_label text-xl mb-4">Event Logo *</p>
             @error('logo')
                 <p class="text-sm text-red-500 mb-1">{{ $message }}</p>
             @enderror
@@ -63,7 +63,7 @@
             @endif
         </div>
         <div class="w-1/2 p-8 bg-white rounded border shadow-md">
-            <p class="form_label text-xl mb-4">Event Banner</p>
+            <p class="form_label text-xl mb-4">Event Banner *</p>
             @error('banner')
                 <p class="text-sm text-red-500 mb-1">{{ $message }}</p>
             @enderror

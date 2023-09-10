@@ -15,7 +15,7 @@
             <div class="w-1/2 pr-8">
                 <div class="p-8 bg-white rounded border shadow-md flex flex-col gap-4">
                     <div>
-                        <label for="title" class="form_label">Name</label>
+                        <label for="title" class="form_label">Name *</label>
                         <input type="text" id="title" name="title" class="form_input" value="{{ $basics->title }}">
                         @error('title')
                             <script>
@@ -25,7 +25,7 @@
                         @enderror
                     </div>
                     <div>
-                        <label for="tagline" class="form_label">Tagline</label>
+                        <label for="tagline" class="form_label">Tagline *</label>
                         <input type="text" id="tagline" name="tagline" class="form_input"
                             value="{{ $basics->tagline }}">
                         @error('tagline')
@@ -36,7 +36,7 @@
                         @enderror
                     </div>
                     <div>
-                        <label for="description" class="form_label">Description</label>
+                        <label for="description" class="form_label">Description *</label>
                         <textarea name="description" id="editor" class="form_input">{{ $basics->description }}</textarea>
                         @error('description')
                             <script>
@@ -51,7 +51,7 @@
             <div class="w-1/2 pl-8">
                 <div class="p-8 bg-white rounded border shadow-md flex flex-col gap-4">
                     <div>
-                        <label for="category" class="form_label">Event Category</label>
+                        <label for="category" class="form_label">Event Category *</label>
                         <select id="category" name="category" class="form_input">
                             <option value="Academic Engagements"
                                 {{ $basics->category === 'Academic Engagements' ? 'selected' : '' }}>Academic Engagements
@@ -113,7 +113,7 @@
                     </div>
                     @if ($basics->mode != 'Online')
                         <div>
-                            <label for="venue" class="form_label">Venue</label>
+                            <label for="venue" class="form_label">Venue *</label>
                             <input type="text" id="venue" name="venue" class="form_input"
                                 value="{{ $basics->venue }}">
                             @error('venue')
