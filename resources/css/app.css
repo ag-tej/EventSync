@@ -30,7 +30,7 @@
     }
 
     .secondary_button {
-        @apply button border text-gray-700 bg-transparent border-gray-500 hover:shadow-gray-500/30;
+        @apply button border text-gray-700 bg-transparent border-gray-500 hover:shadow-gray-500/20;
     }
 
     .danger_button {
