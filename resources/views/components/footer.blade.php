@@ -4,7 +4,7 @@
             <div>
                 <p class="text-white font-semibold text-4xl">
                     We love <span class="text-[#ffa4f2]">events</span>
-                    <span class="block mt-1">and the <span class="text-[#ffa4f2]">people</span> who</span>
+                    <span class="block mt-1">and <span class="text-[#ffa4f2]">people</span> who</span>
                     <span class="block mt-1">organize them.</span>
                 </p>
                 <div class="flex items-center gap-6 mt-8">
