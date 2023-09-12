@@ -26,37 +26,31 @@
             <p class="text-center text-4xl font-semibold">Happening Now</p>
             <div class="my-8 flex gap-10">
                 <div
-                    class="border border-gray-200 border-t-8 border-t-gray-700 rounded shadow hover:shadow-md p-8 flex flex-col flex-[1]">
+                    class="border border-gray-200 border-t-8 border-t-gray-700 rounded shadow hover:shadow-md p-8 flex flex-col gap-1 flex-[1]">
                     <p class="text-2xl font-semibold">StatusCode 0</p>
-                    <p class="text-gray-700">September 10 - 13, 2023</p>
+                    <p class="text-gray-700 font-medium">September 10 - 13, 2023</p>
                     <p class="text-sm text-gray-500">Hybrid</p>
-                    <p class="bg-gray-100 w-fit px-3 py-2 rounded my-4">Academic Engagements</p>
-                    <p class="text-gray-700">ACE College, Kathmandu, Nepal</p>
-                    <Button class="button w-full mx-auto mt-4">
-                        Apply Now
-                    </Button>
+                    <p class="my-4 text-gray-700 font-medium">Academic Engagements</p>
+                    <p class="font-medium">ACE College, Kathmandu, Nepal</p>
+                    <Button class="button w-full mx-auto mt-4">Apply Now</Button>
                 </div>
                 <div
-                    class="border border-gray-200 border-t-8 border-t-gray-700 rounded shadow hover:shadow-md p-8 flex flex-col flex-[1]">
+                    class="border border-gray-200 border-t-8 border-t-gray-700 rounded shadow hover:shadow-md p-8 flex flex-col gap-1 flex-[1]">
                     <p class="text-2xl font-semibold">Blood Donation</p>
-                    <p class="text-gray-700">October 02, 2023</p>
+                    <p class="text-gray-700 font-medium">October 02, 2023</p>
                     <p class="text-sm text-gray-500">In-Person</p>
-                    <p class="bg-gray-100 w-fit px-3 py-2 rounded my-4">Community Empowerment</p>
-                    <p class="text-gray-700">Sifal, Kathmandu, Nepal</p>
-                    <Button class="button w-full mx-auto mt-4">
-                        Apply Now
-                    </Button>
+                    <p class="my-4 text-gray-500">Community Empowerment</p>
+                    <p class="font-medium">Sifal, Kathmandu, Nepal</p>
+                    <Button class="button w-full mx-auto mt-4">Apply Now</Button>
                 </div>
                 <div
-                    class="border border-gray-200 border-t-8 border-t-gray-700 rounded shadow hover:shadow-md p-8 flex flex-col flex-[1]">
+                    class="border border-gray-200 border-t-8 border-t-gray-700 rounded shadow hover:shadow-md p-8 flex flex-col gap-1 flex-[1]">
                     <p class="text-2xl font-semibold">LOCUS IOE</p>
-                    <p class="text-gray-700">October 10 - 17, 2023</p>
+                    <p class="text-gray-700 font-medium">October 10 - 17, 2023</p>
                     <p class="text-sm text-gray-500">In-Person</p>
-                    <p class="bg-gray-100 w-fit px-3 py-2 rounded my-4">Fairs and Expositions</p>
-                    <p class="text-lg text-gray-700">Pulchowk, Lalitpur, Nepal</p>
-                    <Button class="button w-full mx-auto mt-4">
-                        Apply Now
-                    </Button>
+                    <p class="my-4 text-gray-500">Fairs and Expositions</p>
+                    <p class="font-medium">Pulchowk, Lalitpur, Nepal</p>
+                    <Button class="button w-full mx-auto mt-4">Apply Now</Button>
                 </div>
             </div>
             <div class="text-center">
