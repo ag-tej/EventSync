@@ -45,7 +45,7 @@
                         <option value="Fairs and Expositions">Fairs and Expositions</option>
                         <option value="Festivals and Jubilations">Festivals and Jubilations</option>
                         <option value="Music and Artistry">Music and Artistry</option>
-                        <option value="Competitions and Challenges">Competitions and Challenges</option>
+                        <option value="Competition / Challenges">Competition / Challenges</option>
                         <option value="Sports and Wellness">Sports and Wellness</option>
                         <option value="Health and Fitness">Health and Fitness</option>
                     </select>

@@ -71,9 +71,9 @@
                             <option value="Music and Artistry"
                                 {{ $basics->category === 'Music and Artistry' ? 'selected' : '' }}>Music and Artistry
                             </option>
-                            <option value="Competitions and Challenges"
-                                {{ $basics->category === 'Competitions and Challenges' ? 'selected' : '' }}>Competitions
-                                and Challenges</option>
+                            <option value="Competition / Challenges"
+                                {{ $basics->category === 'Competition / Challenges' ? 'selected' : '' }}>Competition /
+                                Challenges</option>
                             <option value="Sports and Wellness"
                                 {{ $basics->category === 'Sports and Wellness' ? 'selected' : '' }}>Sports and Wellness
                             </option>
