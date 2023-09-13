@@ -21,6 +21,8 @@ class Date extends Model
     protected $casts = [
         'event_begins' => 'datetime:Y-m-d',
         'event_ends' => 'datetime:Y-m-d',
+        'application_open' => 'datetime:Y-m-d',
+        'application_close' => 'datetime:Y-m-d',
     ];
 
     public function event()

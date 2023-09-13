@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
+    public function explore()
+    {
+        $opens = Event::where('isPublished', 1)
+            ->whereHas('date', function ($query) {
+                $query->whereDate('application_open', '<', Carbon::now());
+            })
+            ->whereHas('date', function ($query) {
+                $query->whereDate('event_ends', '>', Carbon::now());
+            })->orderBy('updated_at', 'desc')->get();
+        $upcomings = Event::where('isPublished', 1)
+            ->whereHas('date', function ($query) {
+                $query->whereDate('application_open', '>', Carbon::now());
+            })->orderBy('updated_at', 'desc')->get();
+        return view('explore', compact('opens', 'upcomings'));
+    }
+
     public function dashboard()
     {
         $drafts = Event::where('isPublished', 0)->where('organizer_id', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
