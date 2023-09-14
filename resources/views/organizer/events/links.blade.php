@@ -41,17 +41,6 @@
                         @enderror
                     </div>
                     <div>
-                        <label for="twitter_link" class="form_label">Twitter</label>
-                        <input type="url" id="twitter_link" name="twitter_link" class="form_input"
-                            @if ($link != null) value="{{ $link->twitter_link }}" @endif>
-                        @error('twitter_link')
-                            <script>
-                                document.getElementById('twitter_link').classList.add('border-red-500')
-                            </script>
-                            <p class="text-sm text-red-500">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <div>
                         <label for="linkedin_link" class="form_label">LinkedIn</label>
                         <input type="url" id="linkedin_link" name="linkedin_link" class="form_input"
                             @if ($link != null) value="{{ $link->linkedin_link }}" @endif>

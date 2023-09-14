@@ -11,7 +11,6 @@ class Link extends Model
 
     protected $fillable = [
         'event_id',
-        'twitter_link',
         'linkedin_link',
         'discord_link',
         'facebook_link',

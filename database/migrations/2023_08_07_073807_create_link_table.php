@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('links', function (Blueprint $table) {
             $table->id();
             $table->foreignId('event_id')->references('id')->on('events');
-            $table->string('twitter_link')->nullable();
             $table->string('linkedin_link')->nullable();
             $table->string('discord_link')->nullable();
             $table->string('facebook_link');
