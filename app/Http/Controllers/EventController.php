@@ -29,6 +29,13 @@ class EventController extends Controller
         return view('explore', compact('opens', 'upcomings'));
     }
 
+    public function viewEvent($slug)
+    {
+        $event = Event::where('slug', $slug)->first();
+        $now = Carbon::now();
+        return view('event_view', compact('event', 'now'));
+    }
+
     public function dashboard()
     {
         $drafts = Event::where('isPublished', 0)->where('organizer_id', Auth::user()->id)->orderBy('updated_at', 'desc')->get();

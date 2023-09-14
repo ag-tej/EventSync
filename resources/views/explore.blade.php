@@ -67,14 +67,16 @@
                                 <p class="text-2xl text-gray-900 font-semibold">{{ $open->title }}</p>
                                 <p class="text-gray-700 font-medium">{{ $open->tagline }}</p>
                             </div>
-                            <a href="{{ $open->link->facebook_link }}" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-12 h-12 p-2 text-purple bg-purple/10 rounded-full hover:shadow-md">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                                </svg>
-                            </a>
+                            @if ($open->link->website_link)
+                                <a href="{{ $open->link->website_link }}" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-12 h-12 p-2 text-purple bg-purple/10 rounded-full hover:shadow-md">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                                    </svg>
+                                </a>
+                            @endif
                         </div>
                         <div class="flex justify-between items-center my-4">
                             <div>
@@ -95,7 +97,7 @@
                                 <p class="secondary_button">{{ $open->mode }}</p>
                                 <p class="secondary_button">Starts {{ $open->date->event_begins->format('M d, Y') }}</p>
                             </div>
-                            <button class="button">Apply Now</button>
+                            <a href="{{ route('view.event', $open->slug) }}" class="button">See Details</a>
                         </div>
                     </div>
                 @endforeach
@@ -115,14 +117,16 @@
                                 <p class="text-2xl text-gray-900 font-semibold">{{ $upcoming->title }}</p>
                                 <p class="text-gray-700 font-medium">{{ $upcoming->tagline }}</p>
                             </div>
-                            <a href="{{ $upcoming->link->facebook_link }}" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-12 h-12 p-2 text-purple bg-purple/10 rounded-full hover:shadow-md">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                                </svg>
-                            </a>
+                            @if ($open->link->website_link)
+                                <a href="{{ $upcoming->link->website_link }}" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-12 h-12 p-2 text-purple bg-purple/10 rounded-full hover:shadow-md">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                                    </svg>
+                                </a>
+                            @endif
                         </div>
                         <div class="flex justify-between items-center my-4">
                             <div>
@@ -146,7 +150,7 @@
                                 <p class="secondary_button">Opens
                                     {{ $upcoming->date->application_open->format('M d, Y') }}</p>
                             </div>
-                            <button class="button">Remind Me</button>
+                            <a href="{{ route('view.event', $upcoming->slug) }}" class="button">See Details</a>
                         </div>
                     </div>
                 @endforeach

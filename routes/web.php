@@ -24,6 +24,7 @@ Route::get('', function () {
     return view('welcome');
 });
 Route::get('explore', [EventController::class, 'explore'])->name('explore');
+Route::get('explore/{slug}', [EventController::class, 'viewEvent'])->name('view.event');
 
 Route::middleware('verified', 'auth')->group(function () {
     // profile
