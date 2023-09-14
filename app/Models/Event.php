@@ -50,6 +50,16 @@ class Event extends Model
         return $this->hasOne(Date::class);
     }
 
+    public function applicant()
+    {
+        return $this->hasMany(Applicant::class, 'event_id');
+    }
+
+    public function answer()
+    {
+        return $this->hasMany(Answer::class, 'event_id');
+    }
+
     protected static function boot()
     {
         parent::boot();

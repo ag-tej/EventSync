@@ -48,10 +48,14 @@
                         <p class="text-xl text-purple">{{ $event->date->application_open->format('M d, h:i A') }}</p>
                     @endif
                 </div>
-                @if ($event->date->application_open < $now && $event->date->application_close > $now)
-                    <button class="button w-full p-4">Apply Now</button>
+                @if (Auth::user() && $hasApplied)
+                    <a href="{{ route('apply.event', $event->slug) }}" class="button w-full p-4">View Application Status</a>
                 @else
-                    <button disabled class="button w-full p-4 opacity-60 cursor-not-allowed">Apply Now</button>
+                    @if ($event->date->application_open < $now && $event->date->application_close > $now)
+                        <a href="{{ route('apply.event', $event->slug) }}" class="button w-full p-4">Apply Now</a>
+                    @else
+                        <button disabled class="button w-full p-4 opacity-60 cursor-not-allowed">Apply Now</button>
+                    @endif
                 @endif
             </div>
         </div>
@@ -65,27 +69,39 @@
                             class="text-purple font-semibold text-xl underline mt-2">Follow Code of Conduct</a>
                     </div>
                 @endif
+                @if ($event->approx_participants)
+                    <div class="mt-8">
+                        <p class="font-semibold text-2xl">Registration</p>
+                        <p class="font-medium text-xl mt-2">Approx. Participants: {{ $event->approx_participants }}</p>
+                        <p class="font-medium text-xl mt-2">Team Size: {{ $event->team_size }}</p>
+                    </div>
+                @endif
             </div>
             <div class="w-1/3 bg-white shadow rounded px-8 py-5 flex flex-col gap-6 justify-center items-start">
                 <p class="font-semibold text-xl mb-2">SOCIAL CHANNELS</p>
                 <a href="{{ $event->link->facebook_link }}" class="flex items-center gap-2 font-medium"><img
-                        src="{{ asset('svg/facebook.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->title }} | Facebook</a>
+                        src="{{ asset('svg/facebook.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->title }} |
+                    Facebook</a>
                 <hr>
                 <a href="{{ $event->link->instagram_link }}" class="flex items-center gap-2 font-medium"><img
-                        src="{{ asset('svg/instagram.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->title }} | Instagram</a>
+                        src="{{ asset('svg/instagram.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->title }} |
+                    Instagram</a>
                 @if ($event->link->linkedin_link)
                     <hr>
                     <a href="{{ $event->link->linkedin_link }}" class="flex items-center gap-2 font-medium"><img
-                            src="{{ asset('svg/linkedin.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->title }} | LinkedIn</a>
+                            src="{{ asset('svg/linkedin.svg') }}"
+                            class="h-6 object-contain aspect-3/2">{{ $event->title }} | LinkedIn</a>
                 @endif
                 @if ($event->link->discord_link)
                     <hr>
                     <a href="{{ $event->link->discord_link }}" class="flex items-center gap-2 font-medium"><img
-                            src="{{ asset('svg/discord.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->title }} | Discord</a>
+                            src="{{ asset('svg/discord.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->title }}
+                        | Discord</a>
                 @endif
                 <hr>
                 <a href="mailto: {{ $event->link->contact_email }}" class="flex items-center gap-2 font-medium mb-2"><img
-                        src="{{ asset('svg/gmail.svg') }}" class="h-6 object-contain aspect-3/2">{{ $event->link->contact_email }}</a>
+                        src="{{ asset('svg/gmail.svg') }}"
+                        class="h-6 object-contain aspect-3/2">{{ $event->link->contact_email }}</a>
             </div>
         </div>
     </section>

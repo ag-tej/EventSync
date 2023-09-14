@@ -5,23 +5,29 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Application extends Model
+class Answer extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'application_id',
         'event_id',
-        'question',
-        'placeholder',
+        'user_id',
+        'answer',
     ];
+
+    public function application()
+    {
+        return $this->belongsTo(Application::class, 'application_id');
+    }
 
     public function event()
     {
         return $this->belongsTo(Event::class, 'event_id');
     }
 
-    public function answer()
+    public function user()
     {
-        return $this->hasMany(Answer::class, 'application_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

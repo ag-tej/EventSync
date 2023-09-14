@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Applicant;
 use App\Models\Application;
 use App\Models\Brand;
 use App\Models\Date;
@@ -33,7 +34,11 @@ class EventController extends Controller
     {
         $event = Event::where('slug', $slug)->first();
         $now = Carbon::now();
-        return view('event_view', compact('event', 'now'));
+        if (Auth::user()) {
+            $hasApplied = Applicant::where('user_id', Auth::user()->id)->where('event_id', $event->id)->first();
+            return view('event_view', compact('event', 'now', 'hasApplied'));
+        } else
+            return view('event_view', compact('event', 'now'));
     }
 
     public function dashboard()
