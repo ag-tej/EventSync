@@ -98,9 +98,9 @@
                                 <p>{{ $progress->venue }}</p>
                             </div>
                         @endif
-                        <button class="button w-full mt-4">
+                        <a href="{{ route('events.dashboard', $progress->slug) }}" class="button w-full mt-4">
                             Open Dashboard
-                        </button>
+                        </a>
                     </div>
                 @endforeach
             </div>

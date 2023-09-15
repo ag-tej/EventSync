@@ -5,7 +5,7 @@
             <p class="text-white">EventSync</p>
         </a>
         @if (Auth::user())
-            <a href="#" class="hover:text-white">My Events</a>
+            <a href="{{ route('my.event', Auth::user()->username) }}" class="hover:text-white">My Events</a>
         @else
             <a href="/" class="hover:text-white">Home</a>
         @endif

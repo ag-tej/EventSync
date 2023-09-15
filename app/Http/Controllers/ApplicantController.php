@@ -58,4 +58,11 @@ class ApplicantController extends Controller
         $applicant->delete();
         return redirect()->back()->with('danger', 'Application withdrawn.');
     }
+
+    public function myEvents()
+    {
+
+        $applicants = Applicant::where('user_id', Auth::user()->id)->get();
+        return view('user.my_events', compact('applicants'));
+    }
 }

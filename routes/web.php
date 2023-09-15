@@ -5,7 +5,6 @@ use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DateController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\EventDashboardController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -50,6 +49,7 @@ Route::middleware('verified', 'auth')->group(function () {
     Route::get('apply/{slug}', [ApplicantController::class, 'apply'])->name('apply.event');
     Route::post('apply/{slug}', [ApplicantController::class, 'submit'])->name('submit.event');
     Route::delete('withdraw/{slug}', [ApplicantController::class, 'withdraw'])->name('withdraw.event');
+    Route::get('events/{username}', [ApplicantController::class, 'myEvents'])->name('my.event');
     // organizer
     Route::get('organizer/dashboard', [EventController::class, 'dashboard'])->name('organizer.dashboard');
     Route::post('organizer/event/create', [EventController::class, 'createEvent'])->name('event.create');
