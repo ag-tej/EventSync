@@ -61,7 +61,6 @@ class ApplicantController extends Controller
 
     public function myEvents()
     {
-
         $applicants = Applicant::where('user_id', Auth::user()->id)->get();
         return view('user.my_events', compact('applicants'));
     }
