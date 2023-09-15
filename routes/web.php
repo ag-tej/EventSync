@@ -5,6 +5,7 @@ use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DateController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventDashboardController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -74,4 +75,9 @@ Route::middleware('verified', 'auth')->group(function () {
     Route::put('date/update/{id}', [DateController::class, 'update'])->name('date.update');
     Route::get('drafts/publish/{id}', [EventController::class, 'publish'])->name('drafts.publish');
     Route::get('drafts/unpublish/{id}', [EventController::class, 'unpublish'])->name('drafts.unpublish');
+    // event dashboard
+    Route::get('events/dashboard/{slug}', [EventDashboardController::class, 'index'])->name('events.dashboard');
+    Route::get('events/dashboard/applicant/{id}', [EventDashboardController::class, 'applicant'])->name('applicant.dashboard');
+    Route::post('events/dashboard/applicant/accept/{id}', [EventDashboardController::class, 'accept'])->name('applicant.accept');
+    Route::post('events/dashboard/applicant/reject/{id}', [EventDashboardController::class, 'reject'])->name('applicant.reject');
 });

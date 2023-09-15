@@ -14,6 +14,8 @@
     {{-- aos animation --}}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    {{-- chart.js --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     {{-- methods script --}}
     <script src="{{ asset('js/methods.js') }}" defer></script>
     <title>@yield('title')</title>
